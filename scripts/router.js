@@ -89,3 +89,4 @@ export function pushToHistory(state, entryNum) {
   }
   return history;
 }
+

@@ -16,7 +16,7 @@
 
 <body>
   <header>
-    <h1>Journal Entries</h1>
+    <h1 id="title">Journal Entries</h1>
     <img src="./styles/settings.svg" alt="settings" width=40 height=40>
   </header>
 
@@ -39,34 +39,29 @@
 
   <script>
     var factory = splitio({
-    core: {
-      authorizationKey: '1doocssar0lck45vl1tellcf3kh29sjo7ag6',
-      key: Math.random().toString(36).substring(7) // unique identifier for your user
-    }
-  });
-  
-  var client = factory.client();
-  
-  client.on(client.Event.SDK_READY, function() {
-    var treatment = client.getTreatment('double_column_layout');
-  
-    if (treatment === 'on') {
-        // insert on code here
-        document.querySelector("main").classList.add("double-column");
-    }   else   if (treatment === 'off') {
-        // insert off code here
-        document.querySelector("main").classList.remove("double-column");
-    }   else {
-        // insert control code here
-    }
-  
-  });
-  </script>
-  
+      core: {
+        authorizationKey: '1doocssar0lck45vl1tellcf3kh29sjo7ag6',
+        key: Math.random().toString(36).substring(7) // unique identifier for your user
+      }
+    });
 
+    var client = factory.client();
+
+    client.on(client.Event.SDK_READY, function () {
+      var treatment = client.getTreatment('change_title_font');
+
+      if (treatment === 'on') {
+        // insert on code here
+        document.querySelector("h1").style.fontFamily = "Impact,Charcoal,sans-serif";
+      } else if (treatment === 'off') {
+        // insert off code here
+        document.querySelector("h1").style.fontFamily = "Arial, sans-serif";
+      } else {
+        // insert control code here
+      }
+    });
+  </script>
 
 </body>
-
-
 
 </html>
