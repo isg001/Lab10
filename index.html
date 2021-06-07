@@ -2,6 +2,27 @@
 <html lang="en">
 
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KTMPJC9');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-198840079-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-198840079-1');
+  </script>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +36,10 @@
 </head>
 
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTMPJC9" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <header>
     <h1>Journal Entries</h1>
     <img src="./styles/settings.svg" alt="settings" width=40 height=40>
@@ -39,30 +64,30 @@
 
   <script>
     var factory = splitio({
-    core: {
-      authorizationKey: '1doocssar0lck45vl1tellcf3kh29sjo7ag6',
-      key: Math.random().toString(36).substring(7) // unique identifier for your user
-    }
-  });
-  
-  var client = factory.client();
-  
-  client.on(client.Event.SDK_READY, function() {
-    var treatment = client.getTreatment('double_column_layout');
-  
-    if (treatment === 'on') {
+      core: {
+        authorizationKey: '1doocssar0lck45vl1tellcf3kh29sjo7ag6',
+        key: Math.random().toString(36).substring(7) // unique identifier for your user
+      }
+    });
+
+    var client = factory.client();
+
+    client.on(client.Event.SDK_READY, function () {
+      var treatment = client.getTreatment('double_column_layout');
+
+      if (treatment === 'on') {
         // insert on code here
         document.querySelector("main").classList.add("double-column");
-    }   else   if (treatment === 'off') {
+      } else if (treatment === 'off') {
         // insert off code here
         document.querySelector("main").classList.remove("double-column");
-    }   else {
+      } else {
         // insert control code here
-    }
-  
-  });
+      }
+
+    });
   </script>
-  
+
 
 
 </body>
